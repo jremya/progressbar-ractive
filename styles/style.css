@@ -1,0 +1,35 @@
+body {
+	margin-left: 40%;
+}
+
+.progressbar {
+  position: relative;
+  width: 100%;  
+  border: 1px solid black;
+  margin-bottom: 10px;
+  height: 35px;
+  border-radius: 4px;
+  
+}
+.progressbar-fill {
+  height: 33px;
+  background-color: #89AAEA;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+    
+.progressbar-fill-full {
+  height: 33px;
+  background-color:  #ff4646;  
+  border-radius: 4px;
+}
+.progress-amount {
+  position: absolute;
+  left: 45%;
+  top: 7px;
+  color: #000;
+}
+
+.progressbar-button {
+	margin: 10px;
+}
