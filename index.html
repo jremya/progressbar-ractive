@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang='en-GB'>
+   <head>
+      <meta charset='utf-8'>
+      <title>Ractive test</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="styles/style.css" rel="stylesheet" />
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+   </head>
+   <body>
+      <div id='container' class="container-fluid"> </div>
+      <script id="template" type='text/ractive'>
+         <div class="row">
+         	<div class="col-xs-12 col-sm-4 col-md-4">
+         	</div>
+         	
+         	<div class="col-xs-12 col-sm-4 col-md-4">
+         		<h1>Progress bars</h1>
+         		{{#each progressbars}}
+         			<div class="progressbar">
+         				<div class="{{ amount>=100 ? 'progressbar-fill-full' : 'progressbar-fill'}}" style="width: {{amount>=100? 100: amount}}%">
+         					<span class="progress-amount" >{{amount}}%</span>
+         				</div>
+         			<div>
+         		{{/each}}
+         
+         		<select class="form-control" value='{{selectedProgress}}'>
+         			{{#each progressbars :index}}
+         				<option value='{{index}}'>{{name}}</option>
+         			{{/each}}
+         		</select>
+         		
+         		<div>					
+         			{{#each amounts}}
+         				<span class="col-xs-6 col-sm-3">
+         					<button class="progressbar-button" on-click='adjust(this)'>{{this > 0 ? '+' : ''}}{{this}}</button>
+         				</span>
+         			{{/each}}
+         		</div>				
+         	</div>	
+         	
+         	<div class="col-xs-12 col-sm-4 col-md-4">
+         	</div>		
+         </div>
+      </script>
+      <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+      <script src="scripts/main.js"></script>
+   </body>
+</html>
